@@ -1,11 +1,11 @@
 
-    var lista_respostas = ['registradores', 'cpu', 'i5', 'cs', 'dual core', 'dma', 'ula', 'flash', 'adress bus', 'rom', 'i7', 'quad core', 'data bus', 'memoria de massa', 'ram', 'eprom']
+    var lista_respostas = ['registradores', 'cpu', 'i5', 'cs', 'dual-core', 'dma', 'ula', 'flash', 'adress-bus', 'rom', 'i7', 'quad-core', 'data-bus', 'memoria-de-massa', 'ram', 'eprom']
 
     var indexPergunta = 0;
     var perguntasCertas = [];
 
     var lista_perguntas = [
-        '<span id="pergunta1"> Localizados dentro do processador, são pequenas memórias internas para rápido acesso deste. <span>',
+        'Localizados dentro do processador, são pequenas memórias internas para rápido acesso deste.',
         'É a parte do computador que executa funções e processa dados.',
         'Processador lançado em 2009 pela Intel, é mais eficiente energeticamente e menos custoso mas possui menos capacidade de processamento.',
         'A sigla do sinal que permite selecionar dispositivos no barramento SPI',
