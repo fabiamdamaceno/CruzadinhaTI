@@ -1,0 +1,132 @@
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 5%;
+    align-items: center;
+    height: 100vh;
+}
+
+#div_perguntas {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 40px;
+    width: 100%;
+}
+
+#div_perguntas input {
+    padding: 10px;
+    font-size: 16px;
+}
+
+#div_perguntas input:focus {
+    border: solid 2px #124ec7;;
+    outline: none;
+    border-radius: 2px;
+}
+
+#div_perguntas h1 {
+    margin-bottom: 20px;
+    color: #124ec7;
+}
+
+#div_perguntas p {
+    height: 80px;
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: #2b2b2b;
+}
+
+#id_botoes {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5%;
+
+}
+
+#id_botoes button {
+    padding: 10px;
+    border: none;
+    background-color: #457ff4;
+    border-radius: 4px;
+    outline: none;
+    color: #f8f8f8;
+    font-size: 16px;
+    animation: all 0.8s ease-out;
+
+}
+
+#id_botoes button:hover {
+    cursor: pointer;
+    background-color: #124ec7;
+
+}
+
+.grid-container {
+    background: radial-gradient(rgb(35, 8, 154), #3e2dd6);
+    /* border: 20px #3e2dd6 solid; */
+    border-radius: 20px;
+    display: grid;
+    grid-template-columns: repeat(18, 30px);
+    /* 16 colunas de 20px */
+    grid-template-rows: repeat(17, 30px);
+    /* 16 linhas de 20px */
+    /* gap: 3px; */
+    /* Espaço entre as células */
+}
+
+.cell {
+    width: 30px;
+    background-color: #f8f8f8;
+    height: 30px;
+    text-align: center;
+    border: 0.1px solid #cfcfcf;
+    color: rgb(95, 95, 95);
+    /* Borda para visualizar as células */
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.semuso {
+    background-color: rgb(206, 206, 206);
+}
+
+.uso {
+    /* border: solid 2px red; */
+}
+
+.num {
+    background-color: #457ff4;
+
+    color: rgb(214, 214, 214);
+}
+
+.escondida {
+    display: none;
+}
+
+@keyframes surgir {
+    from {
+        opacity: 0;
+        transform: translateX(0px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+ }
+ .animacao-surgir {
+    animation: surgir 0.8s ease-out;
+}

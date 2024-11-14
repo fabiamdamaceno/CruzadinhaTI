@@ -5,99 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        * {
-            margin: 0%;
-            padding: 0%;
-            box-sizing: border-box;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-
-        .container {
-            display: flex;
-            justify-content: space-between;
-            padding: 0px 5%;
-            align-items: center;
-            height: 100vh;
-        }
-
-        #div_perguntas {
-            display: flex;
-            flex-direction: column;
-            text-align: center;
-            padding: 40px;
-            width: 100%;
-        }
-
-        #div_perguntas input {
-            padding: 10px;
-        }
-
-        #div_perguntas h1 {
-            margin-bottom: 10%;
-        }
-
-        #div_perguntas p {
-            font-size: 22px;
-            margin-bottom: 10px;
-        }
-
-        #id_botoes {
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            margin-top: 10%;
-        }
-
-        #id_botoes button {
-            padding: 10px;
-        }
-
-        .grid-container {
-            background: radial-gradient(rgb(35, 8, 154), #3e2dd6);
-            /* border: 20px #3e2dd6 solid; */
-            border-radius: 20px;
-            display: grid;
-            grid-template-columns: repeat(18, 30px);
-            /* 16 colunas de 20px */
-            grid-template-rows: repeat(17, 30px);
-            /* 16 linhas de 20px */
-            /* gap: 3px; */
-            /* Espaço entre as células */
-        }
-
-        .cell {
-            width: 30px;
-            background-color: #f8f8f8;
-            height: 30px;
-            text-align: center;
-            border: 0.1px solid #cfcfcf;
-            color: rgb(95, 95, 95);
-            /* Borda para visualizar as células */
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 13px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .semuso {
-            background-color: rgb(206, 206, 206);
-        }
-
-        .uso {
-            /* border: solid 2px red; */
-        }
-
-        .num {
-            background: radial-gradient(rgb(35, 8, 154), #3e2dd6);
-            color: rgb(214, 214, 214);
-        }
-
-        .escondida {
-            display: none;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -109,10 +17,11 @@
                     deste.</p>
                 <input type="text" id="ipt_resposta" placeholder="digite sua resposta">
                 <div id="id_botoes">
-                    <button onclick="perguntar('anterior')">Pergunta Anterior</button>
-                    <button onclick="responder()">Responder</button>
-                    <button onclick="perguntar('próxima')">Proxima Pergunta</button>
+                    <button onclick="perguntar('anterior')">  < Anterior </button>
+                    <button onclick="responder()" style="width: 40%;">Responder</button>
+                    <button onclick="perguntar('próxima')">Proxima ></button>
                 </div>
+                <div style="position: fixed; bottom: 5%; right: 41%; font-size: 12px;">Feito por Natã Chaves e Fabiam Damacedo</div>
             </div>
             <div class="grid-container">
 
@@ -137,15 +46,15 @@
                 <div class="cell semuso"></div>
                 <div class="cell semuso"></div>
                 <div class="cell num">12</div>
-                <div class="cell"> <span class="escondida" id="palavra12_q">q</span></div>
-                <div class="cell"><span class="escondida" id="palavra7_u">u</span></div>
-                <div class="cell"><span class="escondida" id="palavra12_a">a</span></div>
-                <div class="cell"><span class="escondida" id="palavra12_d">d</span></div>
-                <div class="cell"><span class="escondida" id="palavra12"> </span></div>
-                <div class="cell"><span class="escondida" id="palavra12_c">c</span></div>
-                <div class="cell"><span class="escondida" id="palavra12_o">o</span></div>
-                <div class="cell"><span class="escondida" id="palavra12_r">r</span> </div>
-                <div class="cell"><span class="escondida" id="palavra12_e">e</span></div>
+                <div class="cell"> <span class="escondida animacao-surgir" id="palavra12_q">q</span></div>
+                <div class="cell"><span class="escondida animacao-surgir" id="palavra7_u">u</span></div>
+                <div class="cell"><span class="escondida animacao-surgir" id="palavra12_a">a</span></div>
+                <div class="cell"><span class="escondida animacao-surgir" id="palavra12_d">d</span></div>
+                <div class="cell"><span id="palavra12">-</span></div>
+                <div class="cell"><span class="escondida animacao-surgir" id="palavra12_c">c</span></div>
+                <div class="cell"><span class="escondida animacao-surgir" id="palavra12_o">o</span></div>
+                <div class="cell"><span class="escondida animacao-surgir" id="palavra12_r">r</span> </div>
+                <div class="cell"><span class="escondida animacao-surgir" id="palavra12_e">e</span></div>
                 <div class="cell semuso"></div>
                 <div class="cell semuso"></div>
                 <div class="cell semuso"></div>
@@ -156,13 +65,13 @@
                 <div class="cell semuso"></div>
                 <div class="cell semuso"></div>
                 <div class="cell semuso"></div>
-                <div class="cell"><span class="escondida" id="palavra7_l">l</span></div>
+                <div class="cell"><span class="escondida animacao-surgir" id="palavra7_l">l</span></div>
                 <div class="cell semuso"></div>
                 <div class="cell semuso"></div>
                 <div class="cell semuso"></div>
                 <div class="cell semuso"></div>
                 <div class="cell semuso"></div>
-                <div class="cell"><span class="escondida" id="palavra1_e">e</span></div>
+                <div class="cell"><span class="escondida animacao-surgir" id="palavra1_e">e</span></div>
                 <div class="cell semuso"></div>
                 <div class="cell semuso"></div>
                 <div class="cell semuso"></div>
@@ -174,13 +83,13 @@
                 <div class="cell semuso"></div>
                 <div class="cell semuso"></div>
                 <div class="cell semuso"></div>
-                <div class="cell"><span class="escondida" id="palavra7_a">a</span></div>
+                <div class="cell"><span class="escondida animacao-surgir" id="palavra7_a">a</span></div>
                 <div class="cell semuso"></div>
                 <div class="cell semuso"></div>
                 <div class="cell semuso"></div>
                 <div class="cell semuso"></div>
                 <div class="cell semuso"></div>
-                <div class="cell"><span class="escondida" id="palavra1_g">g</span></div>
+                <div class="cell"><span class="escondida animacao-surgir" id="palavra1_g">g</span></div>
                 <div class="cell semuso"></div>
                 <div class="cell semuso"></div>
                 <div class="cell semuso"></div>
@@ -198,8 +107,8 @@
                 <div class="cell semuso"></div>
                 <div class="cell semuso"></div>
                 <div class="cell num">3</div>
-                <div class="cell"><span class="escondida" id="palavra3_i">i</span></div>
-                <div class="cell"><span class="escondida" id="palavra3_5">5</span></div>
+                <div class="cell"><span class="escondida animacao-surgir" id="palavra3_i">i</span></div>
+                <div class="cell"><span class="escondida animacao-surgir" id="palavra3_5">5</span></div>
                 <div class="cell semuso"></div>
                 <div class="cell semuso"></div>
                 <div class="cell semuso"></div>
@@ -215,8 +124,8 @@
                 <div class="cell semuso"></div>
                 <div class="cell semuso"></div>
                 <div class="cell num">4</div>
-                <div class="cell"><span class="escondida" id="palavra4_c">c</span></div>
-                <div class="cell"><span class="escondida" id="palavra4_s">s</span></div>
+                <div class="cell"><span class="escondida animacao-surgir" id="palavra4_c">c</span></div>
+                <div class="cell"><span class="escondida animacao-surgir" id="palavra4_s">s</span></div>
                 <div class="cell semuso"></div>
                 <div class="cell semuso"></div>
                 <div class="cell semuso"></div>
@@ -228,13 +137,13 @@
                 <div class="cell semuso"></div>
                 <div class="cell semuso"></div>
                 <div class="cell num">6</div>
-                <div class="cell"><span class="escondida" id="palavra5_d">d</span></div>
-                <div class="cell"><span class="escondida" id="palavra6_a">m</span></div>
-                <div class="cell"><span class="escondida" id="palavra6_m">a</span></div>
+                <div class="cell"><span class="escondida animacao-surgir" id="palavra5_d">d</span></div>
+                <div class="cell"><span class="escondida animacao-surgir" id="palavra6_a">m</span></div>
+                <div class="cell"><span class="escondida animacao-surgir" id="palavra6_m">a</span></div>
                 <div class="cell semuso"></div>
                 <div class="cell semuso"></div>
                 <div class="cell semuso"></div>
-                <div class="cell"><span class="escondida" id="palavra1_t">t</span></div>
+                <div class="cell"><span class="escondida animacao-surgir" id="palavra1_t">t</span></div>
                 <div class="cell semuso"></div>
                 <div class="cell semuso"></div>
                 <div class="cell semuso"></div>
@@ -246,149 +155,149 @@
                 <div class="cell semuso"></div>
                 <div class="cell semuso"></div>
                 <div class="cell semuso"></div>
-                <div class="cell"><span class="escondida" id="palavra5_u">u</span></div>
+                <div class="cell"><span class="escondida animacao-surgir" id="palavra5_u">u</span></div>
                 <div class="cell semuso"></div>
                 <div class="cell semuso"></div>
                 <div class="cell semuso"></div>
                 <div class="cell semuso"></div>
                 <div class="cell semuso"></div>
-                <div class="cell"><span class="escondida" id="palavra1_r">r</span></div>
+                <div class="cell"><span class="escondida animacao-surgir" id="palavra1_r">r</span></div>
                 <div class="cell semuso"></div>
                 <div class="cell semuso"></div>
                 <div class="cell semuso"></div>
                 <div class="cell semuso"></div>
-                <div class="cell"><span class="escondida" id="palavra9_a">a</span></div>
+                <div class="cell"><span class="escondida animacao-surgir" id="palavra9_a">a</span></div>
                 <div class="cell semuso"></div>
-                <div class="cell"><span class="escondida" id="palavra10_r">r</span></div>
+                <div class="cell"><span class="escondida animacao-surgir" id="palavra10_r">r</span></div>
                 <div class="cell semuso"></div>
                 <div class="cell num">8</div>
-                <div class="cell"><span class="escondida" id="palavra8_f">f</span></div>
-                <div class="cell"><span class="escondida" id="palavra8_l">l</span></div>
-                <div class="cell"><span class="escondida" id="palavra5_a">a</span></div>
-                <div class="cell"><span class="escondida" id="palavra8_s">s</span></div>
-                <div class="cell"><span class="escondida" id="palavra8_h">h</span></div>
+                <div class="cell"><span class="escondida animacao-surgir" id="palavra8_f">f</span></div>
+                <div class="cell"><span class="escondida animacao-surgir" id="palavra8_l">l</span></div>
+                <div class="cell"><span class="escondida animacao-surgir" id="palavra5_a">a</span></div>
+                <div class="cell"><span class="escondida animacao-surgir" id="palavra8_s">s</span></div>
+                <div class="cell"><span class="escondida animacao-surgir" id="palavra8_h">h</span></div>
                 <div class="cell semuso"></div>
                 <div class="cell semuso"></div>
                 <div class="cell semuso"></div>
-                <div class="cell"><span class="escondida" id="palavra1_a">a</span></div>
-                <div class="cell semuso"></div>
-                <div class="cell semuso"></div>
-                <div class="cell semuso"></div>
-                <div class="cell semuso"></div>
-                <div class="cell"><span class="escondida" id="palavra9_d">d</span></div>
-                <div class="cell semuso"></div>
-                <div class="cell"><span class="escondida" id="palavra10_o">o</span></div>
+                <div class="cell"><span class="escondida animacao-surgir" id="palavra1_a">a</span></div>
                 <div class="cell semuso"></div>
                 <div class="cell semuso"></div>
                 <div class="cell semuso"></div>
                 <div class="cell semuso"></div>
-                <div class="cell"><span class="escondida" id="palavra5_l">l</span></div>
+                <div class="cell"><span class="escondida animacao-surgir" id="palavra9_d">d</span></div>
+                <div class="cell semuso"></div>
+                <div class="cell"><span class="escondida animacao-surgir" id="palavra10_o">o</span></div>
+                <div class="cell semuso"></div>
+                <div class="cell semuso"></div>
+                <div class="cell semuso"></div>
+                <div class="cell semuso"></div>
+                <div class="cell"><span class="escondida animacao-surgir" id="palavra5_l">l</span></div>
                 <div class="cell semuso"></div>
                 <div class="cell semuso"></div>
                 <div class="cell semuso"></div>
                 <div class="cell semuso"></div>
                 <div class="cell semuso"></div>
-                <div class="cell"><span class="escondida" id="palavra1_d">d</span></div>
+                <div class="cell"><span class="escondida animacao-surgir" id="palavra1_d">d</span></div>
                 <div class="cell semuso"></div>
                 <div class="cell semuso"></div>
                 <div class="cell semuso"></div>
                 <div class="cell num">15</div>
-                <div class="cell"><span class="escondida" id="palavra9_r2">r</span></div>
-                <div class="cell"><span class="escondida" id="palavra15_a">a</span></div>
-                <div class="cell"><span class="escondida" id="palavra10_m">m</span></div>
+                <div class="cell"><span class="escondida animacao-surgir" id="palavra9_r2">r</span></div>
+                <div class="cell"><span class="escondida animacao-surgir" id="palavra15_a">a</span></div>
+                <div class="cell"><span class="escondida animacao-surgir" id="palavra10_m">m</span></div>
                 <div class="cell semuso"></div>
                 <div class="cell semuso"></div>
                 <div class="cell semuso"></div>
                 <div class="cell semuso"></div>
-                <div class="cell"><span class="escondida"> </span></div>
+                <div class="cell"><span class="escondida animacao-surgir"> </span></div>
                 <div class="cell semuso"></div>
                 <div class="cell semuso"></div>
                 <div class="cell semuso"></div>
                 <div class="cell semuso"></div>
                 <div class="cell semuso"></div>
-                <div class="cell"><span class="escondida" id="palavra1_o">o</span></div>
+                <div class="cell"><span class="escondida animacao-surgir" id="palavra1_o">o</span></div>
                 <div class="cell semuso"></div>
                 <div class="cell semuso"></div>
                 <div class="cell semuso"></div>
                 <div class="cell semuso"></div>
-                <div class="cell"><span class="escondida" id="palavra9_e">e</span></div>
+                <div class="cell"><span class="escondida animacao-surgir" id="palavra9_e">e</span></div>
                 <div class="cell semuso"></div>
                 <div class="cell semuso"></div>
                 <div class="cell semuso"></div>
                 <div class="cell semuso"></div>
                 <div class="cell num">16</div>
                 <div class="cell semuso"></div>
-                <div class="cell"><span class="escondida" id="palavra5_c">c</span></div>
+                <div class="cell"><span class="escondida animacao-surgir" id="palavra5_c">c</span></div>
                 <div class="cell semuso"></div>
                 <div class="cell num">11</div>
                 <div class="cell semuso"></div>
                 <div class="cell semuso"></div>
                 <div class="cell semuso"></div>
-                <div class="cell"><span class="escondida" id="palavra1_r2">r</span></div>
+                <div class="cell"><span class="escondida animacao-surgir" id="palavra1_r2">r</span></div>
                 <div class="cell semuso"></div>
                 <div class="cell semuso"></div>
                 <div class="cell semuso"></div>
                 <div class="cell semuso"></div>
-                <div class="cell"><span class="escondida" id="palavra9_s3">s</span></div>
+                <div class="cell"><span class="escondida animacao-surgir" id="palavra9_s3">s</span></div>
                 <div class="cell semuso"></div>
                 <div class="cell semuso"></div>
                 <div class="cell num">14</div>
-                <div class="cell"><span class="escondida" id="palavra14_m">m</span></div>
-                <div class="cell"><span class="escondida" id="palavra14_e">e</span></div>
-                <div class="cell"><span class="escondida" id="palavra14_m2">m</span></div>
-                <div class="cell"><span class="escondida" id="palavra5_o">o</span></div>
-                <div class="cell"><span class="escondida" id="palavra14_r">r</span></div>
-                <div class="cell"><span class="escondida" id="palavra11_i">i</span></div>
-                <div class="cell"><span class="escondida" id="palavra14_a">a</span></div>
-                <div class="cell"><span class="escondida" id="palavra14"> </span></div>
-                <div class="cell"><span class="escondida" id="palavra14_d">d</span></div>
-                <div class="cell"><span class="escondida" id="palavra14_e2">e</span></div>
-                <div class="cell"><span class="escondida" id="palavra14"> </span></div>
-                <div class="cell"><span class="escondida" id="palavra14_m3">m</span></div>
-                <div class="cell"><span class="escondida" id="palavra14_a2">a</span></div>
-                <div class="cell"><span class="escondida" id="palavra14_s">s</span></div>
-                <div class="cell"><span class="escondida" id="palavra9_s2">s</span></div>
-                <div class="cell"><span class="escondida" id="palavra14_a3">a</span></div>
+                <div class="cell"><span class="escondida animacao-surgir" id="palavra14_m">m</span></div>
+                <div class="cell"><span class="escondida animacao-surgir" id="palavra14_e">e</span></div>
+                <div class="cell"><span class="escondida animacao-surgir" id="palavra14_m2">m</span></div>
+                <div class="cell"><span class="escondida animacao-surgir" id="palavra5_o">o</span></div>
+                <div class="cell"><span class="escondida animacao-surgir" id="palavra14_r">r</span></div>
+                <div class="cell"><span class="escondida animacao-surgir" id="palavra11_i">i</span></div>
+                <div class="cell"><span class="escondida animacao-surgir" id="palavra14_a">a</span></div>
+                <div class="cell"><span id="palavra14">-</span></div>
+                <div class="cell"><span class="escondida animacao-surgir" id="palavra14_d">d</span></div>
+                <div class="cell"><span class="escondida animacao-surgir" id="palavra14_e2">e</span></div>
+                <div class="cell"><span id="palavra14">-</span></div>
+                <div class="cell"><span class="escondida animacao-surgir" id="palavra14_m3">m</span></div>
+                <div class="cell"><span class="escondida animacao-surgir" id="palavra14_a2">a</span></div>
+                <div class="cell"><span class="escondida animacao-surgir" id="palavra14_s">s</span></div>
+                <div class="cell"><span class="escondida animacao-surgir" id="palavra9_s2">s</span></div>
+                <div class="cell"><span class="escondida animacao-surgir" id="palavra14_a3">a</span></div>
                 <div class="cell semuso"></div>
                 <div class="cell semuso"></div>
                 <div class="cell semuso"></div>
-                <div class="cell"><span class="escondida" id="palavra16_p">p</span></div>
+                <div class="cell"><span class="escondida animacao-surgir" id="palavra16_p">p</span></div>
                 <div class="cell semuso"></div>
-                <div class="cell"><span class="escondida" id="palavra5_r">r</span></div>
+                <div class="cell"><span class="escondida animacao-surgir" id="palavra5_r">r</span></div>
                 <div class="cell semuso"></div>
-                <div class="cell"><span class="escondida" id="palavra11_7">7</span></div>
-                <div class="cell semuso"></div>
-                <div class="cell semuso"></div>
-                <div class="cell semuso"></div>
-                <div class="cell"><span class="escondida" id="palavra1_s2">s</span></div>
+                <div class="cell"><span class="escondida animacao-surgir" id="palavra11_7">7</span></div>
                 <div class="cell semuso"></div>
                 <div class="cell semuso"></div>
                 <div class="cell semuso"></div>
-                <div class="cell semuso"></div>
-                <div class="cell"> </div>
+                <div class="cell"><span class="escondida animacao-surgir" id="palavra1_s2">s</span></div>
                 <div class="cell semuso"></div>
                 <div class="cell semuso"></div>
                 <div class="cell semuso"></div>
                 <div class="cell semuso"></div>
-                <div class="cell"><span class="escondida" id="palavra16_r">r</span></div>
-                <div class="cell semuso"></div>
-                <div class="cell"><span class="escondida" id="palavra5_e">e</span></div>
+                <div class="cell">-</div>
                 <div class="cell semuso"></div>
                 <div class="cell semuso"></div>
                 <div class="cell semuso"></div>
                 <div class="cell semuso"></div>
+                <div class="cell"><span class="escondida animacao-surgir" id="palavra16_r">r</span></div>
+                <div class="cell semuso"></div>
+                <div class="cell"><span class="escondida animacao-surgir" id="palavra5_e">e</span></div>
                 <div class="cell semuso"></div>
                 <div class="cell semuso"></div>
                 <div class="cell semuso"></div>
                 <div class="cell semuso"></div>
                 <div class="cell semuso"></div>
                 <div class="cell semuso"></div>
-                <div class="cell"><span class="escondida" id="palavra9_b">b</span></div>
                 <div class="cell semuso"></div>
                 <div class="cell semuso"></div>
                 <div class="cell semuso"></div>
                 <div class="cell semuso"></div>
-                <div class="cell"><span class="escondida" id="palavra16_o">o</span></div>
+                <div class="cell"><span class="escondida animacao-surgir" id="palavra9_b">b</span></div>
+                <div class="cell semuso"></div>
+                <div class="cell semuso"></div>
+                <div class="cell semuso"></div>
+                <div class="cell semuso"></div>
+                <div class="cell"><span class="escondida animacao-surgir" id="palavra16_o">o</span></div>
                 <div class="cell semuso"></div>
                 <div class="cell semuso"></div>
                 <div class="cell semuso"></div>
@@ -399,27 +308,27 @@
                 <div class="cell semuso"></div>
                 <div class="cell semuso"></div>
                 <div class="cell num">2</div>
-                <div class="cell"><span class="escondida" id="palavra2_c">c</span></div>
-                <div class="cell"><span class="escondida" id="palavra2_p">p</span></div>
-                <div class="cell"><span class="escondida" id="palavra2_u">u</span></div>
+                <div class="cell"><span class="escondida animacao-surgir" id="palavra2_c">c</span></div>
+                <div class="cell"><span class="escondida animacao-surgir" id="palavra2_p">p</span></div>
+                <div class="cell"><span class="escondida animacao-surgir" id="palavra2_u">u</span></div>
                 <div class="cell semuso"></div>
                 <div class="cell semuso"></div>
                 <div class="cell semuso"></div>
                 <div class="cell semuso"></div>
-                <div class="cell"><span class="escondida" id="palavra16_m">m</span></div>
+                <div class="cell"><span class="escondida animacao-surgir" id="palavra16_m">m</span></div>
                 <div class="cell semuso"></div>
                 <div class="cell semuso"></div>
                 <div class="cell semuso"></div>
                 <div class="cell semuso"></div>
                 <div class="cell num">13</div>
-                <div class="cell"><span class="escondida" id="palavra13_d">d</span></div>
-                <div class="cell"><span class="escondida" id="palavra13_a">a</span></div>
-                <div class="cell"><span class="escondida" id="palavra13_t">t</span></div>
-                <div class="cell"><span class="escondida" id="palavra13_a2">a</span></div>
-                <div class="cell"><span class="escondida" id="palavra13"> </span></div>
-                <div class="cell"><span class="escondida" id="palavra13_b">b</span></div>
-                <div class="cell"><span class="escondida" id="palavra13_u">u</span></div>
-                <div class="cell"><span class="escondida" id="palavra9_s">s</span></div>
+                <div class="cell"><span class="escondida animacao-surgir" id="palavra13_d">d</span></div>
+                <div class="cell"><span class="escondida animacao-surgir" id="palavra13_a">a</span></div>
+                <div class="cell"><span class="escondida animacao-surgir" id="palavra13_t">t</span></div>
+                <div class="cell"><span class="escondida animacao-surgir" id="palavra13_a2">a</span></div>
+                <div class="cell"><span id="palavra13">-</span></div>
+                <div class="cell"><span class="escondida animacao-surgir" id="palavra13_b">b</span></div>
+                <div class="cell"><span class="escondida animacao-surgir" id="palavra13_u">u</span></div>
+                <div class="cell"><span class="escondida animacao-surgir" id="palavra9_s">s</span></div>
                 <div class="cell semuso"></div>
                 <div class="cell semuso"></div>
                 <!-- Continue com mais células para preencher 16x16 -->
@@ -430,257 +339,4 @@
 </body>
 
 </html>
-<script>
-    
-
-    var lista_respostas = ['registradores', 'cpu', 'i5', 'cs', 'dual core', 'dma', 'ula', 'flash', 'adress bus', 'rom', 'i7', 'quad core', 'data bus', 'memoria de massa', 'ram', 'eprom']
-
-    var indexPergunta = 0;
-    var perguntasCertas = [];
-
-    var lista_perguntas = [
-        '<span id="pergunta1"> Localizados dentro do processador, são pequenas memórias internas para rápido acesso deste. <span>',
-        'É a parte do computador que executa funções e processa dados.',
-        'Processador lançado em 2009 pela Intel, é mais eficiente energeticamente e menos custoso mas possui menos capacidade de processamento.',
-        'A sigla do sinal que permite selecionar dispositivos no barramento SPI',
-        'Processador que possui duas unidades lógicas de processamento, como o Intel Celeron G5925.',
-        'É uma rota lógica, hoje integrada com o processador, para funções que acessam diretamente a memória sem necessitar ocupar recursos do processador.',
-        'Compartimento do processador responsável por calcular as expressões matemáticas e booleanas.', 
-        'Memória reprogramável eletricamente não-volátil, utilizada, entre outros, em smartphones e dispositivos de memória portateis.',
-        'Barramento responsável por transportar os endereços que indicam a posição de memória ou o dispositivo que o processador deseja acessar',
-        'Memória permanente do computador, guarda informações essenciais para o sistema, como o BIOS.',
-        'Processador  lançado em 2008 pela Intel, maior capacidade de processamento, porém mais caro e com maior gasto de energia.',
-        'Processador que possui quatro unidades lógicas de processamento, como o I5 750.',
-        'Barramento responsável por transportar os endereços que indicam a posição de memória ou o dispositivo que o proccessaodr deseja acessar',
-        'Memória não-volátil especializada em armazenar grande quantidade de informações, como o HD e o SSD.',
-        'Memória volátil temporária, onde se armazena informações de rápido acesso dos programas em andamento no computador.',
-        'Memória de leitura não volátil, utilizada para programas importantes que necessitam de reprogramações ocasionais.',
-    ]
-
-    // Função para passar a perguntar
-    function perguntar(mudar) {
-        var pergunta;
-
-        if(mudar == 'próxima' && indexPergunta <= 14) {
-            indexPergunta++;
-        } else if(mudar == 'anterior' && indexPergunta >= 1) {
-            indexPergunta--;
-        }
-
-        h1_titulo.innerHTML = `Pergunta ${indexPergunta + 1}`;
-        p_pergunta.innerHTML = lista_perguntas[indexPergunta];
-
-        if(perguntasCertas.includes(indexPergunta)) {
-            p_pergunta.style.color = "green"
-        } else {
-            p_pergunta.style.color = "";
-        }
-    };
-    
-    function responder() {
-        var resposta = ipt_resposta.value.toLowerCase()
-
-        // Dois styles para resetar a indicação de resposta errada
-        ipt_resposta.style.border = "";
-        ipt_resposta.style.color = "";
-        
-        // Validações para validar se a resposta é válida E se está de acordo com a pergunta na tela
-        if (lista_respostas.indexOf(resposta) == 0 && indexPergunta == 0) {
-            palavra12_r.style.display = 'block';
-            palavra1_e.style.display = 'block';
-            palavra1_g.style.display = 'block';
-            palavra3_i.style.display = 'block';
-            palavra4_s.style.display = 'block';
-            palavra1_t.style.display = 'block';
-            palavra1_r.style.display = 'block';
-            palavra1_a.style.display = 'block';
-            palavra1_d.style.display = 'block';
-            palavra1_o.style.display = 'block';
-            palavra1_r2.style.display = 'block';
-            palavra14_e2.style.display = 'block';
-            palavra1_s2.style.display = 'block';
-
-            perguntasCertas.push(0)
-            
-            perguntar('próxima');
-            
-        } else if (lista_respostas.indexOf(resposta) == 1 && indexPergunta == 1){
-            palavra2_c.style.display = 'block';
-            palavra2_p.style.display = 'block';
-            palavra2_u.style.display = 'block';
-            
-            perguntasCertas.push(1)
-            
-            perguntar('próxima');
-            
-        } else if (lista_respostas.indexOf(resposta) == 2 && indexPergunta == 2){
-            palavra3_i.style.display = 'block';
-            palavra3_5.style.display = 'block';
-            
-            perguntasCertas.push(2)
-            
-            perguntar('próxima');
-            
-        } else if (lista_respostas.indexOf(resposta) == 3 && indexPergunta == 3){
-            palavra4_c.style.display = 'block';
-            palavra4_s.style.display = 'block';
-            
-            perguntasCertas.push(3)
-            
-            perguntar('próxima');
-            
-        } else if (lista_respostas.indexOf(resposta) == 4 && indexPergunta == 4){
-            palavra5_r.style.display = 'block';
-            palavra5_u.style.display = 'block';
-            palavra5_l.style.display = 'block';
-            palavra5_c.style.display = 'block';
-            palavra5_e.style.display = 'block';
-            palavra5_a.style.display = 'block';
-            palavra5_o.style.display = 'block';
-            palavra5_d.style.display = 'block';
-            
-            perguntasCertas.push(4)
-            
-            perguntar('próxima');
-            
-        } else if (lista_respostas.indexOf(resposta) == 5 && indexPergunta == 5){
-            palavra6_m.style.display = 'block';
-            palavra6_a.style.display = 'block';
-            palavra5_d.style.display = 'block';
-            
-            perguntasCertas.push(5)
-            
-            perguntar('próxima');
-            
-        } else if (lista_respostas.indexOf(resposta) == 6 && indexPergunta == 6){
-            palavra7_u.style.display = 'block';
-            palavra7_l.style.display = 'block';
-            palavra7_a.style.display = 'block';
-            
-            perguntasCertas.push(6)
-            
-            perguntar('próxima');
-            
-        }else if (lista_respostas.indexOf(resposta) == 7 && indexPergunta == 7){
-            palavra8_f.style.display = 'block';
-            palavra8_l.style.display = 'block';
-            palavra5_a.style.display = 'block';
-            palavra8_s.style.display = 'block';
-            palavra8_h.style.display = 'block';
-            
-            perguntasCertas.push(7)
-            
-            perguntar('próxima');
-        }
-        else if (lista_respostas.indexOf(resposta) == 8 && indexPergunta == 8){
-            palavra9_s2.style.display = 'block';
-            palavra9_s.style.display = 'block';
-            palavra9_b.style.display = 'block';
-            palavra9_e.style.display = 'block';
-            palavra9_d.style.display = 'block';
-            palavra2_u.style.display = 'block';
-            palavra9_a.style.display = 'block';
-            palavra9_r2.style.display = 'block';
-            palavra9_s3.style.display = 'block';
-            
-            perguntasCertas.push(8)
-            
-            perguntar('próxima');
-            
-        } else if (lista_respostas.indexOf(resposta) == 9 && indexPergunta == 9){
-            palavra10_r.style.display = 'block';
-            palavra10_o.style.display = 'block';
-            palavra10_m.style.display = 'block';
-            
-            perguntasCertas.push(9)
-            
-            perguntar('próxima');
-            
-        } else if (lista_respostas.indexOf(resposta) == 10 && indexPergunta == 10){
-            palavra11_i.style.display = 'block';
-            palavra11_7.style.display = 'block';
-            
-            perguntasCertas.push(10)
-            
-            perguntar('próxima');
-            
-        } else if (lista_respostas.indexOf(resposta) == 11 && indexPergunta == 11){
-            palavra12_q.style.display = 'block';
-            palavra7_u.style.display = 'block';
-            palavra12_a.style.display = 'block';
-            palavra12_d.style.display = 'block';
-            palavra12_c.style.display = 'block';
-            palavra12_o.style.display = 'block';
-            palavra12_r.style.display = 'block';
-            palavra12_e.style.display = 'block';
-            
-            perguntasCertas.push(11)
-            
-            perguntar('próxima');
-            
-        } else if (lista_respostas.indexOf(resposta) == 12 && indexPergunta == 12){
-            palavra13_d.style.display = 'block';
-            palavra13_a.style.display = 'block';
-            palavra13_a2.style.display = 'block';
-            palavra13_t.style.display = 'block';
-            palavra13_b.style.display = 'block';
-            palavra13_u.style.display = 'block';
-            palavra9_s.style.display = 'block';
-            
-            perguntasCertas.push(12)
-            
-            perguntar('próxima');
-        }
-        else if (lista_respostas.indexOf(resposta) == 13 && indexPergunta == 13){
-            palavra14_m.style.display = 'block';
-            palavra14_e.style.display = 'block';
-            palavra14_m2.style.display = 'block';
-            palavra5_o.style.display = 'block';
-            palavra14_r.style.display = 'block';
-            palavra11_i.style.display = 'block';
-            palavra14_d.style.display = 'block';
-            palavra14_a.style.display = 'block';
-            palavra14_e2.style.display = 'block';
-            palavra14_m3.style.display = 'block';
-            palavra14_a2.style.display = 'block';
-            palavra14_s.style.display = 'block';
-            palavra9_s2.style.display = 'block';
-            palavra14_a3.style.display = 'block';
-            
-            perguntasCertas.push(13)
-            
-            perguntar('próxima');
-            
-        } else if (lista_respostas.indexOf(resposta) == 14 && indexPergunta == 14){
-            palavra9_r2.style.display = 'block';
-            palavra15_a.style.display = 'block';
-            palavra10_m.style.display = 'block';
-            
-            perguntasCertas.push(14)
-            
-            perguntar('próxima');
-            
-        } else if (lista_respostas.indexOf(resposta) == 15 && indexPergunta == 15){
-            palavra14_e.style.display = 'block';
-            palavra16_p.style.display = 'block';
-            palavra16_r.style.display = 'block';
-            palavra16_o.style.display = 'block';
-            palavra16_m.style.display = 'block';
-            
-            perguntasCertas.push(15)
-            
-            perguntar('próxima');
-            
-        } else {
-            // Styles para indicar que foi uma resposta errada
-            ipt_resposta.style.border = "1px solid red";
-            ipt_resposta.style.color = "red";
-            
-        };
-
-        ipt_resposta.value = ""
-        ipt_resposta.focus()
-
-    }
-
-</script>
+<script src="script.js"></script>
